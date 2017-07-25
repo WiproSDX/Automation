@@ -1,0 +1,15 @@
+---
+
+- hosts: nodes
+  become: yes
+  become_user: root
+
+  roles:
+  - subscription
+  - common
+  - openshift-pre
+
+- hosts: localhost
+
+  roles:
+  - openshift-play

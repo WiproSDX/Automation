@@ -1,0 +1,22 @@
+---
+- name: copy networkmanager.conf
+  copy: src=NetworkManager.conf dest=/etc/NetworkManager/NetworkManager.conf
+- name: Installation of docker 
+  yum: 
+    name: docker
+    state: latest
+- name: copy the docker-storage-setup to all nodes
+  copy:
+    src: docker-storage-setup
+    dest: /etc/sysconfig/docker-storage-setup
+    owner: root
+    group: root
+    mode: 0644
+- name: configuring docker
+  shell: /usr/bin/docker-storage-setup 
+- name: Start the docker
+  service:
+    name: docker
+    state: started
+    enabled: yes
+

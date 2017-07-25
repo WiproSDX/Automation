@@ -1,0 +1,3 @@
+---
+- name: Installing Openshift 
+  shell: ansible-playbook -f 9 /usr/share/ansible/openshift-ansible/playbooks/byo/config.yml

@@ -1,0 +1,5 @@
+---
+
+nameserver1: 172.16.30.150
+nameserver2: 8.8.8.8
+ntpserver:  172.16.6.201
